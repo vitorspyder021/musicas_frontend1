@@ -2,12 +2,12 @@ const urlBackend = "http://localhost:3000"
 const listaMusicas = document.getElementById("listaMusicas")
 
 async function buscarMusicas(){
-    const resposta = await fetch(urlBanckend)
+    const resposta = await fetch(urlBackend)
     const musicas = await resposta.json()
 
     musicas.forEach((musica) => {
-        listasMusicas.innerHTML += `
-            <article class="musica"
+        listaMusicas.innerHTML += `
+            <article class="musica">
                 <h2>${musica.titulo}</h2>
                 <p class="artista">${musica.artista}</p>
                 <p class="detalhes">${musica.genero} | ${musica.ano} | ${musica.duracao}</p>
